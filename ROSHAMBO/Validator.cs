@@ -3,10 +3,9 @@ namespace ROSHAMBO
 {
     public static class Validator
     {
-        public static Player GetOtherPlayer()
+        public static Player GetOtherPlayer(RockPlayer rockPlayer, RandomPlayer randomPlayer)
         {
-            RockPlayer rockPlayer = new();
-            RandomPlayer randomPlayer = new();
+
             do
             {
                 Console.Clear();
@@ -53,6 +52,30 @@ namespace ROSHAMBO
                 else if(Roshambo.scissors.ToString().ToLower().StartsWith(userInput))
                 {
                     return Roshambo.scissors;
+                }
+            } while(true);
+        }
+
+        public static bool Continue()
+        {
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
+            do
+            {
+                Console.Clear();
+                Console.Write("Would you like to continue Y/N?");
+                string userInput = Console.ReadLine().ToLower().Trim();
+                if(String.IsNullOrEmpty(userInput))
+                {
+                    continue;
+                }
+                else if("yes".StartsWith(userInput))
+                {
+                    return true;
+                }
+                else if("no".StartsWith(userInput))
+                {
+                    return false;
                 }
             } while(true);
         }

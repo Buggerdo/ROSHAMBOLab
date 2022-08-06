@@ -1,6 +1,6 @@
 ﻿namespace ROSHAMBO
 {
-    internal class HumanPlayer : Player
+    public class HumanPlayer : Player
     {
         public HumanPlayer()
         {

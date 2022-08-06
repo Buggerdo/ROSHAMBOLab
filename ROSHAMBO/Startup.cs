@@ -4,14 +4,18 @@
     {
         public static void StartGame()
         {
+            RockPlayer rockPlayer = new();
+            RandomPlayer randomPlayer = new();
             HumanPlayer humanPlayer = new();
+            Player otherPlayer = Validator.GetOtherPlayer(rockPlayer, randomPlayer);
 
-            Player otherPlayer = Validator.GetOtherPlayer();
+            do
+            {
 
-            Roshambo play = humanPlayer.GenerateRoshambo();
+                Roshambo play = humanPlayer.GenerateRoshambo(); 
 
-            Console.WriteLine(play);
-            Console.WriteLine(otherPlayer.Name);
+            } while(Validator.Continue());
+
             Console.WriteLine("startup end");
             Console.ReadKey();
         }

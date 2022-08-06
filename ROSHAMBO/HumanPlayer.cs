@@ -6,6 +6,7 @@
         {
             do
             {
+                Console.Clear();
                 Console.Write("Please enter your name: ");
                 string input = Console.ReadLine();
                 if(!String.IsNullOrEmpty(input))
@@ -17,7 +18,7 @@
         }
         public override Roshambo GenerateRoshambo()
         {
-            throw new NotImplementedException();
+            return Validator.GetPlayerRoshamo();
         }
     }
 }

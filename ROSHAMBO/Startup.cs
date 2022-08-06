@@ -1,7 +1,19 @@
 ﻿namespace ROSHAMBO
 {
-    public class Startup
+    public static class Startup
     {
-        HumanPlayer humanPlayer = new();
+        public static void StartGame()
+        {
+            HumanPlayer humanPlayer = new();
+
+            Player otherPlayer = Validator.GetOtherPlayer();
+
+            Roshambo play = humanPlayer.GenerateRoshambo();
+
+            Console.WriteLine(play);
+            Console.WriteLine(otherPlayer.Name);
+            Console.WriteLine("startup end");
+            Console.ReadKey();
+        }
     }
 }

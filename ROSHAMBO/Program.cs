@@ -1,10 +1,13 @@
 ﻿namespace ROSHAMBO
 {
-    internal class Program
+
+    public class Program
     {
         static void Main()
         {
-            Startup _ = new();
+     
+            Startup.StartGame();
+            Console.WriteLine("end");
         }
     }
 }

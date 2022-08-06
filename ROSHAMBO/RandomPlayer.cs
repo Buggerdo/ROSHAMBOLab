@@ -1,6 +1,6 @@
 ﻿namespace ROSHAMBO
 {
-    internal class RandomPlayer : Player
+    public class RandomPlayer : Player
     {
         public RandomPlayer()
         {

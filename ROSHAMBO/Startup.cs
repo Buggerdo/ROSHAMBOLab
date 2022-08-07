@@ -12,12 +12,13 @@
             do
             {
 
-                Roshambo play = humanPlayer.GenerateRoshambo(); 
-
+                Roshambo humanThrow = humanPlayer.GenerateRoshambo(); 
+                Roshambo otherThrow = otherPlayer.GenerateRoshambo();
+                Console.WriteLine($"{humanPlayer.Name}: {humanThrow}");
+                Console.WriteLine($"{otherPlayer.Name}: {otherThrow}");
+                Validator.CompairThrows(humanThrow, otherThrow);
             } while(Validator.Continue());
-
-            Console.WriteLine("startup end");
-            Console.ReadKey();
+            Console.WriteLine("Thank you for playing!");
         }
     }
 }

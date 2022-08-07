@@ -30,6 +30,57 @@ namespace ROSHAMBO
             } while(true);
         }
 
+        internal static void CompairThrows(Roshambo humanThrow, Roshambo otherThrow)
+        {
+            string win = "You win!";
+            string lose = "You lose.";
+            string draw = "It's a draw.";
+            switch(humanThrow)
+            {
+                case Roshambo.rock:
+                    if(otherThrow == Roshambo.paper)
+                    {
+                        Console.WriteLine(lose);
+                        break;
+                    }
+                    else if(otherThrow == Roshambo.scissors)
+                    {
+                        Console.WriteLine(win);
+                        break;
+                    }
+                    Console.WriteLine(draw);
+                    break;
+                case Roshambo.paper:
+                    if(otherThrow == Roshambo.paper)
+                    {
+                        Console.WriteLine(draw);
+                        break;
+                    }
+                    else if(otherThrow == Roshambo.scissors)
+                    {
+                        Console.WriteLine(lose);
+                        break;
+                    }
+                    Console.WriteLine(win);
+                    break;
+                case Roshambo.scissors:
+                    if(otherThrow == Roshambo.paper)
+                    {
+                        Console.WriteLine(win);
+                        break;
+                    }
+                    else if(otherThrow == Roshambo.scissors)
+                    {
+                        Console.WriteLine(draw);
+                        break;
+                    }
+                    Console.WriteLine(lose);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public static Roshambo GetPlayerRoshamo()
         {
             do
@@ -41,15 +92,15 @@ namespace ROSHAMBO
                 {
                     continue ;
                 }
-                else if(Roshambo.rock.ToString().ToLower().StartsWith(userInput))
+                else if(Roshambo.rock.ToString().StartsWith(userInput))
                 {
                     return Roshambo.rock;
 
-                }else if(Roshambo.paper.ToString().ToLower().StartsWith(userInput))
+                }else if(Roshambo.paper.ToString().StartsWith(userInput))
                 {
                     return Roshambo.paper;
                 }
-                else if(Roshambo.scissors.ToString().ToLower().StartsWith(userInput))
+                else if(Roshambo.scissors.ToString().StartsWith(userInput))
                 {
                     return Roshambo.scissors;
                 }

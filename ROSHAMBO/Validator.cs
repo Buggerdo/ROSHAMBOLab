@@ -86,7 +86,7 @@ namespace ROSHAMBO
             do
             {
                 Console.Clear();
-                Console.Write($"Please choose {Roshambo.rock},  {Roshambo.paper} or {Roshambo.scissors}: ");
+                Console.Write($"Please choose {Roshambo.rock},  {Roshambo.paper} or {Roshambo.scissors} (R/P/S): ");
                 string userInput = Console.ReadLine().ToLower().Trim();
                 if(String.IsNullOrEmpty(userInput))
                 {
